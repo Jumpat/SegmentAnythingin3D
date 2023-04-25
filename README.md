@@ -3,7 +3,7 @@
 ### [Project Page](https://jumpat.github.io/SA3D/) | [Arxiv Paper](https://arxiv.org/abs/2304.12308)
 
 [Segment Anything in 3D with NeRFs](https://arxiv.org/abs/2304.12308)  
-[Jiazhong Cen](https://github.com/Jumpat)<sup>1</sup>, [Zanwei Zhou](https://github.com/Zanue)<sup>1</sup>, [Jiemin Fang](https://jaminfong.cn/)<sup>2</sup>, [Wei Shen](https://shenwei1231.github.io/)<sup>1✉</sup>, [Lingxi Xie](http://lingxixie.com/)<sup>3</sup>, [Dongsheng Jiang]()<sup>3</sup>, [Xiaopeng Zhang](https://sites.google.com/site/zxphistory/)<sup>3</sup>, [Qi Tian](https://scholar.google.com/citations?hl=en&user=61b6eYkAAAAJ)<sup>3</sup>   
+[Jiazhong Cen](https://github.com/Jumpat)<sup>1</sup>, [Zanwei Zhou](https://github.com/Zanue)<sup>1</sup>, [Jiemin Fang](https://jaminfong.cn/)<sup>2</sup>, [Wei Shen](https://shenwei1231.github.io/)<sup>1✉</sup>, [Lingxi Xie](http://lingxixie.com/)<sup>3</sup>, [Dongsheng Jiang](https://sites.google.com/site/dongshengjiangbme/)<sup>3</sup>, [Xiaopeng Zhang](https://sites.google.com/site/zxphistory/)<sup>3</sup>, [Qi Tian](https://scholar.google.com/citations?hl=en&user=61b6eYkAAAAJ)<sup>3</sup>   
 <sup>1</sup>AI Institute, SJTU &emsp; <sup>2</sup>School of EIC, HUST &emsp; <sup>3</sup>Huawei Inc.
 
 *Given a NeRF, just input prompts from **one single view** and then get your 3D model.*   
