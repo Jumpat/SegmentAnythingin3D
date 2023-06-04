@@ -101,6 +101,7 @@ SA3D can handle various scenes for 3D segmentation. Find more demos in our [proj
 ## Acknowledgements
 Thanks for the following project for their valuable contributions:
 - [Segment Anything](https://github.com/facebookresearch/segment-anything)
+- [DVGO](https://github.com/sunset1995/DirectVoxGO)
 
 ## Citation
 If you find this project helpful for your research, please consider citing the report and giving a ⭐.
