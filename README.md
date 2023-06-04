@@ -88,7 +88,9 @@ Using our [Dash](https://github.com/plotly/dash.git) based GUI:
 - Press `Start Training` to run SA3D; we visualize rendered masks and SAM predictions produced by our cross-view self-prompting stategy;
 - Wait a few minutes to see the final rendering results.
 
-
+# TODO List
+- [ ] Refine the GUI, *e.g.*, start from any train view, add more training hyper-parameter options, etc.;
+- [ ] Support the two-pass stage in GUI; currently it may have some bugs.
 
 ## Some Visualization Samples
 
