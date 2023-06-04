@@ -1,5 +1,4 @@
 # Segment Anything🤖️ in 3D with NeRFs (SA3D)
-## Work in Progress
 ### [Project Page](https://jumpat.github.io/SA3D/) | [Arxiv Paper](https://arxiv.org/abs/2304.12308)
 
 [Segment Anything in 3D with NeRFs](https://arxiv.org/abs/2304.12308)  
@@ -67,7 +66,7 @@ We now release the configs on these datasets:
   --sp_name=_gui --num_prompts=20 \
   --render_opt=train --save_ckpt
   ```
-- Render and Save videos
+- Render and Save Videos
   ```bash
   python run_seg_gui.py --config=configs/llff/seg/seg_fern.py --segment \
   --sp_name=_gui --num_prompts=20 \
