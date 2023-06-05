@@ -29,6 +29,23 @@ conda create -n sa3d python=3.10
 pip install -r requirements.txt
 ```
 
+### SAM and Grounding-DINO:
+
+```
+# Installing SAM
+mkdir dependencies; cd dependencies 
+mkdir sam_ckpt; cd sam_ckpt
+wget https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth
+git clone git@github.com:facebookresearch/segment-anything.git 
+cd segment-anything; pip install -e .
+
+# Installing Grounding-DINO
+git clone https://github.com/IDEA-Research/GroundingDINO.git
+cd GroundingDINO/; pip install -e .
+mkdir weights; cd weights
+wget https://github.com/IDEA-Research/GroundingDINO/releases/download/v0.1.0-alpha/groundingdino_swint_ogc.pth
+```
+
 ## Download Data
 We now release the configs on these datasets:
 * *Foward-facing:* [LLFF](https://drive.google.com/drive/folders/14boI-o5hGO9srnWaaogTU5_ji7wkX2S7) 
