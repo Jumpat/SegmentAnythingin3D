@@ -83,11 +83,11 @@ We now release the configs on these datasets:
   --sp_name=_gui --num_prompts=20 \
   --render_opt=train --save_ckpt
   ```
-- Render and Save Videos
+- Render and Save Fly-through Videos
   ```bash
   python run_seg_gui.py --config=configs/llff/seg/seg_fern.py --segment \
   --sp_name=_gui --num_prompts=20 \
-  --render_test --render_opt=video --dump_images \
+  --render_only --render_opt=video --dump_images \
   --seg_type seg_img seg_density
   ```
 
