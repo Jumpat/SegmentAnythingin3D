@@ -99,25 +99,25 @@ Using our [Dash](https://github.com/plotly/dash.git) based GUI:
 
 - Select which type of prompt to be used, currently support: *Point Prompt* and *Text Prompt*;
   - *Point Prompt:* select `Points` in the drop down; click the original image to add a point prompt, then SAM will produce candidate masks; click `Clear Points` to clear out the previous inputs;
-
-https://github.com/Jumpat/SegmentAnythingin3D/assets/58475180/9ae39cb2-6a1f-40a7-b7df-6b149e75358f
-
-
+    
+    https://github.com/Jumpat/SegmentAnythingin3D/assets/58475180/9ae39cb2-6a1f-40a7-b7df-6b149e75358f
+    
+    
   - *Text Prompt:* select `Text` in the drop down;input your text prompt and click `Generate` to get candidate masks; note that unreasonable text input may cause error.
-
-https://github.com/Jumpat/SegmentAnythingin3D/assets/58475180/ba934e0c-dc8a-472a-958c-2b6c4d6ee644
-
-
+    
+    https://github.com/Jumpat/SegmentAnythingin3D/assets/58475180/ba934e0c-dc8a-472a-958c-2b6c4d6ee644
+    
+    
 - Select your target mask;
 - Press `Start Training` to run SA3D; we visualize rendered masks and SAM predictions produced by our cross-view self-prompting stategy;
-
-https://github.com/Jumpat/SegmentAnythingin3D/assets/58475180/c5cc947e-8966-4ec5-9531-434a7b27eed5
-
-
+  
+  https://github.com/Jumpat/SegmentAnythingin3D/assets/58475180/c5cc947e-8966-4ec5-9531-434a7b27eed5
+  
+  
 - Wait a few minutes to see the final rendering results.
-
-
-https://github.com/Jumpat/SegmentAnythingin3D/assets/58475180/9578ea7a-0947-4105-a65c-1f8de12d0bb5
+  
+  
+  https://github.com/Jumpat/SegmentAnythingin3D/assets/58475180/9578ea7a-0947-4105-a65c-1f8de12d0bb5
 
 
 # TODO List
