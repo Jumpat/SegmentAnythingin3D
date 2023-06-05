@@ -200,6 +200,7 @@ class Sam3D(ABC):
         else:
             print('Did not add --save_ckpt in parser. Therefore, ckpt is not saved.')
     
+    @torch.no_grad()
     def render_test(self):
         if self.args.ft_path:
             ckpt_path = self.args.ft_path
