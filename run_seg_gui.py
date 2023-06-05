@@ -143,7 +143,7 @@ if __name__=='__main__':
             # default: one object    
             num_obj = render_viewpoints_kwargs['model'].seg_mask_grid.grid.shape[1]
             render_viewpoints_kwargs['model'] = render_viewpoints_kwargs['model'].cuda()
-            rgbs, segs = render_fn(args, cfg, ckpt_name, flag, e_flag, num_obj, \
+            render_fn(args, cfg, ckpt_name, flag, e_flag, num_obj, \
                                    data_dict, render_viewpoints_kwargs, seg_type=seg_type)
 
     
