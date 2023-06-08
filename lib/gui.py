@@ -28,6 +28,9 @@ def mark_image(_img, points):
 
 def draw_figure(fig, title, animation_frame=None):
     fig = px.imshow(fig, animation_frame=animation_frame)
+    if animation_frame is not None:
+        # fig.update_layout(sliders = [{'visible': False}])
+        fig.layout.updatemenus[0].buttons[0].args[1]["frame"]["duration"] = 33
     fig.update_layout(title_text=title, showlegend=False)
     fig.update_xaxes(showticklabels=False)
     fig.update_yaxes(showticklabels=False)
