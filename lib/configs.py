@@ -99,7 +99,7 @@ def config_parser():
                         help='segmentation type in inference')
     parser.add_argument("--save_ckpt", action='store_true',
                         help='save segmentation ckpt')
-
+    parser.add_argument("--mobile_sam", action='store_true', help='Replace the original SAM encoder with MobileSAM to accelerate segmentation')
     return parser
 
 
