@@ -26,9 +26,15 @@ class Sam3D(ABC):
                  data_dict, device=torch.device('cuda'), stage='coarse', coarse_ckpt_path=None):
         self.cfg = cfg
         self.args = args
-        sam_checkpoint = "./dependencies/sam_ckpt/sam_vit_h_4b8939.pth"
-        model_type = "vit_h"
-        self.sam = sam_model_registry[model_type](checkpoint=sam_checkpoint).to(device)
+        if args.mobile_sam:
+            from mobile_encoder.setup_mobile_sam import setup_model
+            checkpoint = torch.load('./dependencies/sam_ckpt/mobile_sam.pt')
+            self.sam = setup_model().to(device)
+            self.sam.load_state_dict(checkpoint,strict=True)
+        else:
+            sam_checkpoint = "./dependencies/sam_ckpt/sam_vit_h_4b8939.pth"
+            model_type = "vit_h"
+            self.sam = sam_model_registry[model_type](checkpoint=sam_checkpoint).to(device)
         self.predictor = SamPredictor(self.sam)
         print("SAM initializd.")
         self.step_size = cfg.fine_model_and_render.stepsize
