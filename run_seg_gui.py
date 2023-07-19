@@ -5,7 +5,11 @@ import time
 
 import imageio
 import matplotlib.pyplot as plt
-import mmcv
+
+# remove the dependency on mmcv
+# import mmcv
+from lib.config_loader import Config
+
 import numpy as np
 import torch
 import glob
@@ -81,7 +85,7 @@ if __name__=='__main__':
     # load setup
     parser = config_parser()
     args = parser.parse_args()
-    cfg = mmcv.Config.fromfile(args.config)
+    cfg = Config.fromfile(args.config)
 
     # init enviroment
     if torch.cuda.is_available():

@@ -4,7 +4,6 @@ huggingface_hub==0.14.1
 imageio==2.22.2
 lpips==0.1.4
 matplotlib==3.7.1
-mmcv_full==1.6.2
 numpy==1.23.3
 opencv_python==4.6.0.66
 Pillow==9.2.0
