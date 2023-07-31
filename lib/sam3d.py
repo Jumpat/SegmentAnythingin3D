@@ -27,10 +27,17 @@ class Sam3D(ABC):
         self.cfg = cfg
         self.args = args
         if args.mobile_sam:
-            from mobile_encoder.setup_mobile_sam import setup_model
-            checkpoint = torch.load('./dependencies/sam_ckpt/mobile_sam.pt')
-            self.sam = setup_model().to(device)
-            self.sam.load_state_dict(checkpoint,strict=True)
+            from mobile_sam import sam_model_registry
+
+            model_type = "vit_t"
+            sam_checkpoint = "./dependencies/sam_ckpt/mobile_sam.pt"
+
+            device = "cuda" if torch.cuda.is_available() else "cpu"
+
+            self.sam = sam_model_registry[model_type](checkpoint=sam_checkpoint)
+            self.sam.to(device=device)
+            self.sam.eval()
+
         else:
             sam_checkpoint = "./dependencies/sam_ckpt/sam_vit_h_4b8939.pth"
             model_type = "vit_h"
