@@ -145,8 +145,8 @@ If you find this project helpful for your research, please consider citing the r
 ```BibTex
 @article{cen2023segment,
       title={Segment Anything in 3D with NeRFs}, 
-      author={Jiazhong Cen and Zanwei Zhou and Jiemin Fang and Wei Shen and Lingxi Xie and Xiaopeng Zhang and Qi Tian},
-      journal={arXiv:2304.12308},
-      year={2023}
+      author={Jiazhong Cen and Zanwei Zhou and Jiemin Fang and Chen Yang and Wei Shen and Lingxi Xie and Dongsheng Jiang and Xiaopeng Zhang and Qi Tian},
+      booktitle    = {NeurIPS},
+      year         = {2023},
 }
 ```
