@@ -12,6 +12,7 @@
 We propose a novel framework to Segment Anything in 3D, named <b>SA3D</b>. Given a neural radiance field (NeRF) model, SA3D allows users to obtain the 3D segmentation result of any target object via only <b>one-shot</b> manual prompting in a single rendered view. The entire process for obtaining the target 3D model can be completed in approximately 2 minutes, yet without any engineering optimization. Our experiments demonstrate the effectiveness of SA3D in different scenes, highlighting the potential of SAM in 3D scene perception. 
 
 ## Update
+* **2023/11/11**: We release the nerfstudio version of SA3D. Currently it only supports the text prompt as input.
 * **2023/06/29**: We now support [MobileSAM](https://github.com/ChaoningZhang/MobileSAM) as the segmentation network. Follow the installation instruction in [MobileSAM](https://github.com/ChaoningZhang/MobileSAM), and then download *mobile_sam.pt* into folder ``./dependencies/sam_ckpt``. You can use `--mobile_sam` to switch to MobileSAM.
 
 ## Overall Pipeline
