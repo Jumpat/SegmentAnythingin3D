@@ -35,6 +35,8 @@ pip install -r requirements.txt
 ### NeRFStudio
 Follow [this guidance](https://docs.nerf.studio/quickstart/installation.html) to install nerfstudio.
 
+Note: We developed our code under `nerfstudio==0.2.0`.
+
 ### SAM and Grounding-DINO:
 
 ```bash
