@@ -1,0 +1,13 @@
+[project]
+name = "sa3d"
+version = "0.1.0"
+
+dependencies=[
+    "tqdm",
+]
+
+[tool.setuptools.packages.find]
+include = ["sa3d*"]
+
+[project.entry-points.'nerfstudio.method_configs']
+sa3d = 'sa3d.sa3d_config:sa3d_method'

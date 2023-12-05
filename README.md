@@ -24,7 +24,7 @@ With input prompts, SAM cuts out the target object from the according view. The 
 
 ## Installation
 
-```
+```bash
 git clone https://github.com/Jumpat/SegmentAnythingin3D.git
 cd SegmentAnythingin3D
 
@@ -32,9 +32,16 @@ conda create -n sa3d python=3.10
 pip install -r requirements.txt
 ```
 
+### NeRFStudio
+Follow [this guidance](https://docs.nerf.studio/quickstart/installation.html) to install nerfstudio.
+
+Note: We developed our code under `nerfstudio==0.2.0`.
+
 ### SAM and Grounding-DINO:
 
-```
+```bash
+cd sa3d/self_prompting; # now the folder 'dependencies' is under 'sa3d/self_prompting';
+
 # Installing SAM
 mkdir dependencies; cd dependencies 
 mkdir sam_ckpt; cd sam_ckpt
@@ -49,97 +56,40 @@ mkdir weights; cd weights
 wget https://github.com/IDEA-Research/GroundingDINO/releases/download/v0.1.0-alpha/groundingdino_swint_ogc.pth
 ```
 
-## Download Data
-We now release the configs on these datasets:
-* *Foward-facing:* [LLFF](https://drive.google.com/drive/folders/14boI-o5hGO9srnWaaogTU5_ji7wkX2S7) 
-* *Inward-facing:* [mip-NeRF360](https://jonbarron.info/mipnerf360/), [LERF](https://www.lerf.io/)
-
-### Data structure:  
-<details>
-  <summary> (click to expand) </summary>
-
-    data
-    ├── 360_v2             # Link: https://jonbarron.info/mipnerf360/
-    │   └── [bicycle|bonsai|counter|garden|kitchen|room|stump]
-    │       ├── poses_bounds.npy
-    │       └── [images|images_2|images_4|images_8]
-    │
-    ├── nerf_llff_data     # Link: https://drive.google.com/drive/folders/14boI-o5hGO9srnWaaogTU5_ji7wkX2S7
-    │   └── [fern|flower|fortress|horns|leaves|orchids|room|trex]
-    │       ├── poses_bounds.npy
-    │       └── [images|images_2|images_4|images_8]
-    │
-    └── lerf_data               # Link: https://drive.google.com/drive/folders/1vh0mSl7v29yaGsxleadcj-LCZOE_WEWB
-        └── [book_store|bouquet|donuts|...]
-            ├── transforms.json
-            └── [images|images_2|images_4|images_8]
-</details>
+### SA3D
+In the root directory of this repo, conduct
+```bash
+pip install -e .
+```
 
 ## Usage
 - Train NeRF
   ```bash
-  python run.py --config=configs/llff/fern.py --stop_at=20000 --render_video --i_weights=10000
+  ns-train nerfacto --load-data {data-dir}
   ```
-- Run SA3D in GUI
+- Run SA3D
   ```bash
-  python run_seg_gui.py --config=configs/llff/seg/seg_fern.py --segment \
-  --sp_name=_gui --num_prompts=20 \
-  --render_opt=train --save_ckpt
+  ns-train sa3d --data {data-dir} \
+    --load-dir {ckpt-dir} \
+    --pipeline.text_prompt {text-prompt} \
+    --pipeline.network.num_prompts {num-prompts} \
   ```
 - Render and Save Fly-through Videos
   ```bash
-  python run_seg_gui.py --config=configs/llff/seg/seg_fern.py --segment \
-  --sp_name=_gui --num_prompts=20 \
-  --render_only --render_opt=video --dump_images \
-  --seg_type seg_img seg_density
+  ns-viewer --load-config {config-dir}
   ```
-
-Some tips when run SA3D:
-- Increase `--num_prompts` when the target object is extremely irregular like LLFF scenes *Fern* and *Trex*;
-- Use `--seg_poses` to specify the camera pose sequence used for training 3D mask, `default='train', choices=['train', 'video']`.
-
-Using our [Dash](https://github.com/plotly/dash.git) based GUI:
-
-- Select which type of prompt to be used, currently support: *Point Prompt* and *Text Prompt*;
-  - *Point Prompt:* select `Points` in the drop down; click the original image to add a point prompt, then SAM will produce candidate masks; click `Clear Points` to clear out the previous inputs;
-    
-    https://github.com/Jumpat/SegmentAnythingin3D/assets/58475180/9ae39cb2-6a1f-40a7-b7df-6b149e75358f
-    
-    
-  - *Text Prompt:* select `Text` in the drop down;input your text prompt and click `Generate` to get candidate masks; note that unreasonable text input may cause error.
-    
-    https://github.com/Jumpat/SegmentAnythingin3D/assets/58475180/ba934e0c-dc8a-472a-958c-2b6c4d6ee644
-    
-    
-- Select your target mask;
-- Press `Start Training` to run SA3D; we visualize rendered masks and SAM predictions produced by our cross-view self-prompting stategy;
-  
-  https://github.com/Jumpat/SegmentAnythingin3D/assets/58475180/c5cc947e-8966-4ec5-9531-434a7b27eed5
-  
-  
-- Wait a few minutes to see the final rendering results.
-  
-  
-  https://github.com/Jumpat/SegmentAnythingin3D/assets/58475180/9578ea7a-0947-4105-a65c-1f8de12d0bb5
-
-
-# TODO List
-- [ ] Refine the GUI, *e.g.*, start from any train view, add more training hyper-parameter options, etc.;
-- [ ] Support the two-pass stage in GUI; currently it may have some bugs.
 
 ## Some Visualization Samples
 
 SA3D can handle various scenes for 3D segmentation. Find more demos in our [project page](https://jumpat.github.io/SA3D/).
 
-| Forward facing | 360° | Multi-objects |
-| :---: | :---:| :---:|
-|<img src="imgs/horns.gif" width="200"> | <img src="imgs/lego.gif" width="200"> | <img src="imgs/orchid_multi.gif" width="200">
 
 ## Acknowledgements
 Thanks for the following project for their valuable contributions:
 - [Segment Anything](https://github.com/facebookresearch/segment-anything)
 - [DVGO](https://github.com/sunset1995/DirectVoxGO)
 - [Grounding DINO](https://github.com/IDEA-Research/GroundingDINO.git)
+- [nerfstudio](https://github.com/nerfstudio-project/nerfstudio)
 
 ## Citation
 If you find this project helpful for your research, please consider citing the report and giving a ⭐.
