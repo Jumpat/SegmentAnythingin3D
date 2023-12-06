@@ -2,9 +2,10 @@
 ### [Project Page](https://jumpat.github.io/SA3D/) | [Arxiv Paper](https://arxiv.org/abs/2304.12308)
 
 [Segment Anything in 3D with NeRFs](https://arxiv.org/abs/2304.12308)  
-[Jiazhong Cen](https://github.com/Jumpat)\*<sup>1</sup>, [Zanwei Zhou](https://github.com/Zanue)\*<sup>1</sup>, [Jiemin Fang](https://jaminfong.cn/)<sup>2</sup>, [Chen Yang](https://github.com/chensjtu)<sup>1</sup>, [Wei Shen](https://shenwei1231.github.io/)<sup>1✉</sup>, [Lingxi Xie](http://lingxixie.com/)<sup>3</sup>, [Dongsheng Jiang](https://sites.google.com/site/dongshengjiangbme/)<sup>3</sup>, [Xiaopeng Zhang](https://sites.google.com/site/zxphistory/)<sup>3</sup>, [Qi Tian](https://scholar.google.com/citations?hl=en&user=61b6eYkAAAAJ)<sup>3</sup>   
-<sup>1</sup>AI Institute, SJTU &emsp; <sup>2</sup>School of EIC, HUST &emsp; <sup>3</sup>Huawei Inc.  
+[Jiazhong Cen](https://github.com/Jumpat)<sup>1\*</sup>, [Zanwei Zhou](https://github.com/Zanue)<sup>1\*</sup>, [Jiemin Fang](https://jaminfong.cn/)<sup>2,3†</sup>, [Chen Yang](https://github.com/chensjtu)<sup>1</sup>, [Wei Shen](https://shenwei1231.github.io/)<sup>1✉</sup>, [Lingxi Xie](http://lingxixie.com/)<sup>2</sup>, [Dongsheng Jiang](https://sites.google.com/site/dongshengjiangbme/)<sup>2</sup>, [Xiaopeng Zhang](https://sites.google.com/site/zxphistory/)<sup>2</sup>, [Qi Tian](https://scholar.google.com/citations?hl=en&user=61b6eYkAAAAJ)<sup>2</sup>   
+<sup>1</sup>AI Institute, SJTU &emsp; <sup>2</sup>Huawei Inc &emsp; <sup>3</sup>School of EIC, HUST .  
 \*denotes equal contribution  
+†denotes project lead.
 
 *Given a NeRF, just input prompts from **one single view** and then get your 3D model.*   
 <img src="imgs/SA3D.gif" width="800">
@@ -12,7 +13,7 @@
 We propose a novel framework to Segment Anything in 3D, named <b>SA3D</b>. Given a neural radiance field (NeRF) model, SA3D allows users to obtain the 3D segmentation result of any target object via only <b>one-shot</b> manual prompting in a single rendered view. The entire process for obtaining the target 3D model can be completed in approximately 2 minutes, yet without any engineering optimization. Our experiments demonstrate the effectiveness of SA3D in different scenes, highlighting the potential of SAM in 3D scene perception. 
 
 ## Update
-* **2023/11/11**: We release the nerfstudio version of SA3D. Currently it only supports the text prompt as input.
+* **2023/11/11**: We release the [nerfstudio](https://docs.nerf.studio) version of SA3D ([here](https://github.com/Jumpat/SegmentAnythingin3D/tree/nerfstudio-version))! Currently it only supports the text prompt as input.
 * **2023/06/29**: We now support [MobileSAM](https://github.com/ChaoningZhang/MobileSAM) as the segmentation network. Follow the installation instruction in [MobileSAM](https://github.com/ChaoningZhang/MobileSAM), and then download *mobile_sam.pt* into folder ``./dependencies/sam_ckpt``. You can use `--mobile_sam` to switch to MobileSAM.
 
 ## Overall Pipeline
