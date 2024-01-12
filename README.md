@@ -30,6 +30,7 @@ git clone https://github.com/Jumpat/SegmentAnythingin3D.git
 cd SegmentAnythingin3D
 
 conda create -n sa3d python=3.10
+conda activate sa3d
 pip install -r requirements.txt
 ```
 
