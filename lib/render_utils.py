@@ -170,6 +170,8 @@ def render_fn(args, cfg, ckpt_name, flag, e_flag, num_obj, data_dict, render_vie
         if args.dump_images:
             masked_img_dir = os.path.join(testsavedir, 'masked_img')
             os.makedirs(masked_img_dir, exist_ok=True)
+            masks_dir = os.path.join(testsavedir, 'masks')
+            os.makedirs(masks_dir, exist_ok=True)
         for i, rgb, seg in zip(range(rgbs.shape[0]), rgbs, segs):
             # Winner takes all
             max_logit = np.expand_dims(np.max(seg, axis = -1), -1)
@@ -179,7 +181,8 @@ def render_fn(args, cfg, ckpt_name, flag, e_flag, num_obj, data_dict, render_vie
             recolored_rgb = 0.3*rgb + 0.7*(rand_colors[tmp_seg])
             seg_on_rgb.append(recolored_rgb)
             if args.dump_images:
-                imageio.imwrite(os.path.join(masked_img_dir, 'rgb_{:03d}.png'.format(i)), to8b(recolored_rgb))
+                imageio.imwrite(os.path.join(masked_img_dir, 'rgb_{:07d}.png'.format(i)), to8b(recolored_rgb))
+                imageio.imwrite(os.path.join(masks_dir, 'mask_{:07d}.png'.format(i)), to8b(seg>0))
         imageio.mimwrite(os.path.join(testsavedir, 'video.seg_on_rgb'+e_flag+'_'+seg_type+'.mp4'), to8b(seg_on_rgb), fps=30, quality=8)
         return to8b(np.stack(seg_on_rgb))
     
