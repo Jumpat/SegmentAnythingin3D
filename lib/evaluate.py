@@ -50,16 +50,16 @@ def cal_IoU_from_paths(a_paths, b_paths):
 if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument('--img_path', type=str, required=True)
     parser.add_argument('--mask_path', type=str, required=True)
+    parser.add_argument('--gt_path', type=str, required=True)
     args = parser.parse_args()
 
-    if os.path.isdir(args.img_path):
-        assert(os.path.isdir(args.mask_path))
-        img_paths = [os.path.join(args.img_path, f) for f in sorted(os.listdir(args.img_path))]
+    if os.path.isdir(args.mask_path):
+        assert(os.path.isdir(args.gt_path))
         mask_paths = [os.path.join(args.mask_path, f) for f in sorted(os.listdir(args.mask_path))]
-        iou = cal_IoU_from_paths(img_paths, mask_paths)
+        gt_paths = [os.path.join(args.gt_path, f) for f in sorted(os.listdir(args.gt_path))]
+        iou = cal_IoU_from_paths(mask_paths, gt_paths)
     else:
-        iou = cal_IoU_from_path(args.img_path, args.mask_path)
+        iou = cal_IoU_from_path(args.mask_path, args.gt_path)
     
     print('IoU: ', iou)
