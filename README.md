@@ -14,9 +14,10 @@ or
 git clone https://github.com/Jumpat/SegmentAnythingin3D.git
 ```
 
-<!-- ```bash
+```bash
 cd SegmentAnythingin3D;
-``` -->
+git checkout sa3d-gs
+```
 
 Then install the dependencies:
 ```bash
