@@ -1,0 +1,1 @@
+-I"/home/cenjiazhong/gaussian-splatting_sa3d/submodules/diff-gaussian-rasterization/cuda_rasterizer" -I"/home/cenjiazhong/gaussian-splatting_sa3d/submodules/diff-gaussian-rasterization/third_party/glm" -I/home/cenjiazhong/miniconda3/envs/gaussian_splatting/include
