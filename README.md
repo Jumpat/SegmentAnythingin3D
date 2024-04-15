@@ -14,9 +14,10 @@ or
 git clone https://github.com/Jumpat/SegmentAnythingin3D.git
 ```
 
-<!-- ```bash
+```bash
 cd SegmentAnythingin3D;
-``` -->
+git checkout sa3d-gs
+```
 
 Then install the dependencies:
 ```bash
@@ -89,14 +90,14 @@ You can also render the pre-trained 3DGS model without segmentation:
 python render.py -m <path to the pre-trained 3DGS model> --target scene
 ```
 
-## Citation
+# Citation
 If you find this project helpful for your research, please consider citing our paper and giving a ⭐.
 
-<!-- ```BibTex
-@article{cen2023saga,
-      title={Segment Anything in 3D with Radiance Fields}, 
-      author={Jiazhong Cen and Jiemin Fang and and Chen Yang and Lingxi Xie and Xiaopeng Zhang and Wei Shen and Qi Tian},
-      year={2023},
-      journal={arXiv preprint arXiv:2312.00860},
-} -->
-<!-- ``` -->
+```BibTex
+@inproceedings{cen2023segment,
+      title={Segment Anything in 3D with NeRFs}, 
+      author={Jiazhong Cen and Zanwei Zhou and Jiemin Fang and Chen Yang and Wei Shen and Lingxi Xie and Dongsheng Jiang and Xiaopeng Zhang and Qi Tian},
+      booktitle    = {NeurIPS},
+      year         = {2023},
+}
+```
