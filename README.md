@@ -90,7 +90,7 @@ You can also render the pre-trained 3DGS model without segmentation:
 python render.py -m <path to the pre-trained 3DGS model> --target scene
 ```
 
-# Acknowledge
+# Acknowledgement
 The code is built based on [Gaussian Splatting](https://github.com/graphdeco-inria/gaussian-splatting) and [Segment Anything](https://github.com/facebookresearch/segment-anything). We also borrow the implementation of 3D-GS depth rendering (i.e., submodule/diff-gaussian-rasterization-depth) from [here](https://github.com/ashawkey/diff-gaussian-rasterization). We thank them all for their great work.
 
 
