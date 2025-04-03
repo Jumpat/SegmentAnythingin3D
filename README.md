@@ -1,5 +1,5 @@
 # Segment Anything🤖️ in 3D with NeRFs (SA3D)
-### [Project Page](https://jumpat.github.io/SA3D/) | [Arxiv Paper](https://arxiv.org/abs/2304.12308)
+### [Project Page](https://jumpat.github.io/SA3D/) | [Arxiv Paper](https://arxiv.org/abs/2304.12308) | [Data (Google Drive)](https://drive.google.com/file/d/1iiW3EyhiL10U_FCJ0esSrvnzZkHguQ7V/view?usp=share_link)
 
 [Segment Anything in 3D with NeRFs](https://arxiv.org/abs/2304.12308)  
 [Jiazhong Cen](https://github.com/Jumpat)<sup>1\*</sup>, [Zanwei Zhou](https://github.com/Zanue)<sup>1\*</sup>, [Jiemin Fang](https://jaminfong.cn/)<sup>2,3†</sup>, [Chen Yang](https://github.com/chensjtu)<sup>1</sup>, [Wei Shen](https://shenwei1231.github.io/)<sup>1✉</sup>, [Lingxi Xie](http://lingxixie.com/)<sup>2</sup>, [Dongsheng Jiang](https://sites.google.com/site/dongshengjiangbme/)<sup>2</sup>, [Xiaopeng Zhang](https://sites.google.com/site/zxphistory/)<sup>2</sup>, [Qi Tian](https://scholar.google.com/citations?hl=en&user=61b6eYkAAAAJ)<sup>2</sup>   
@@ -13,6 +13,7 @@
 We propose a novel framework to Segment Anything in 3D, named <b>SA3D</b>. Given a neural radiance field (NeRF) model, SA3D allows users to obtain the 3D segmentation result of any target object via only <b>one-shot</b> manual prompting in a single rendered view. The entire process for obtaining the target 3D model can be completed in approximately 2 minutes, yet without any engineering optimization. Our experiments demonstrate the effectiveness of SA3D in different scenes, highlighting the potential of SAM in 3D scene perception. 
 
 ## Update
+* **2025/04/03**: We are excited to release a new [dataset](https://drive.google.com/file/d/1iiW3EyhiL10U_FCJ0esSrvnzZkHguQ7V/view?usp=share_link) for 3D segmentation based on 3D Gaussian Splatting (3D-GS). The dataset features challenging scenes with severe occlusions, reflective surfaces, and multi-granularity segmentation. We warmly welcome the community to explore and use it!
 * **2024/04/16**: We release the [3D-GS](https://github.com/graphdeco-inria/gaussian-splatting) version of SA3D ([here](https://github.com/Jumpat/SegmentAnythingin3D/tree/nerfstudio-version)). Now 3D segmentation can be achieved within seconds!
 * **2023/11/11**: We release the [nerfstudio](https://docs.nerf.studio) version of SA3D ([here](https://github.com/Jumpat/SegmentAnythingin3D/tree/nerfstudio-version))! Currently it only supports the text prompt as input.
 * **2023/06/29**: We now support [MobileSAM](https://github.com/ChaoningZhang/MobileSAM) as the segmentation network. Follow the installation instruction in [MobileSAM](https://github.com/ChaoningZhang/MobileSAM), and then download *mobile_sam.pt* into folder ``./dependencies/sam_ckpt``. You can use `--mobile_sam` to switch to MobileSAM.
