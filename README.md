@@ -155,3 +155,12 @@ If you find this project helpful for your research, please consider citing the r
       year         = {2023},
 }
 ```
+
+```BibTex
+@article{cen2025segment,
+      title={Segment Anything in 3D with Radiance Fields}, 
+      author={Jiazhong Cen and Jiemin Fang and Zanwei Zhou and Chen Yang and Lingxi Xie and Xiaopeng Zhang and Wei Shen and Qi Tian},
+      journal    = {IJCV},
+      year         = {2025},
+}
+```
